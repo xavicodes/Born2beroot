@@ -1,0 +1,80 @@
+THIS IS ALL BORN2BEROOT COMMANDS LIST:
+
+SUDO:
+First type "su" - to login in as the root user.
+
+Type sudo visudo to open sudoers file
+
+CHECK GIT AND VIM:
+Then type git --version to check the Git Version
+
+SSH CONFIGURATION AND CHEKING:
+Type sudo systemctl status ssh to check SSH Server Status
+Then type sudo grep Port /etc/ssh/sshd_config to check if the port settings are right
+type sudo service ssh restart to restart the SSH Service
+
+UFW FIREWALL COMMANDS:
+Type sudo ufw enable to inable UFW
+
+Type sudo ufw status numbered to check the status of UFW
+
+Type sudo ufw allow ssh/port-number to configure the Rules
+
+Type sudo ufw status numbered to check the status of UFW 4242 Port
+
+CONNECTING TO SSH:
+Type sudo service sshd status to check your SSH Status
+
+Open an iTerm and type the following ssh xlourenc@127.0.0.1 -p 4242
+
+Lastly type exit to quit your SSH iTerm Connection
+
+PASSWORD POLICY:
+Then type sudo vim /etc/pam.d/common-password
+
+CREATING A GROUP:
+First type sudo groupadd "user42" to create a group
+
+Lastly type "getent group" to check if the group has been created
+
+First type cut -d: -f1 /etc/passwd to check all local users
+
+Type sudo adduser new_username to create a username - write down your new_username, as you will need this later on.
+
+2.1 Type sudo usermod -aG user42 your_username
+
+2.2 Type sudo usermod -aG evaluating your_new_username
+
+Type getent group user42 to check if the user is the group
+
+Type getent group evaluating to check the group
+
+type groups to see which groups the user account belongs to
+
+Lastly type chage -l your_new_username to check if the password rules are working in users
+
+
+CREATING SUDO LOG AND ACCESING
+
+First type cd ~/../../
+
+Then type cd var/log
+
+Then type mkdir sudo (if it already exists, then continue to the next step).
+
+Then type cd sudo && touch sudo.log
+
+
+CRONTAB :
+Then type cd /usr/local/bin/
+
+Then type touch monitoring.sh
+
+REBOOTING:
+sudo reboot 
+
+Type sudo /usr/local/bin/monitoring.sh to execute your script as su (super user)
+
+Type sudo crontab -u root -e to open the crontab and add the rule
+
+
